@@ -110,3 +110,8 @@ source ~/.cache/wal/colors-tty.sh
 eval $(thefuck --alias FUCK)
 
 eval $(thefuck --alias)
+
+wal-tile() {
+    wal -n -i "$@"
+    feh --bg-tile "$(< "${HOME}/.cache/wal/wal")"
+}

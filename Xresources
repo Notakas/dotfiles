@@ -1,0 +1,4 @@
+urxvt*scrollBar: false
+URxvt.transparent: true
+URxvt.shading:50
+URxvt.font: xft:monospace:size=12
