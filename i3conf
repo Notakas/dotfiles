@@ -86,10 +86,10 @@ bindsym $mod+a focus parent
 set $workspace1 "1: Terminal"
 set $workspace2 "2: Browsing"
 set $workspace3 "3: Coding"
-set $workspace4 "4: File explorer"
-set $workspace5 "5: :)"
-set $workspace6 "6: (:"
-set $workspace7 "7: Virtual machine"
+set $workspace4 "4: Gaming"
+set $workspace5 "5: "
+set $workspace6 "6: Game library"
+set $workspace7 "7: "
 set $workspace8 "8: Email"
 set $workspace9 "9: Social"
 set $workspace10 "10 Music player"
@@ -162,10 +162,12 @@ bar {
         status_command i3status
 }
 
-assign [class="Firefox"] $workspace1
+assign [class="Firefox"] $workspace2
 assign [class="Code"] $workspace3
-assign [class="discord"] $workspace5
-assign [class="Spotify"] $workspace5
+assign [class="Steam"] $workspace6
+assign [class="Lutris"] $workspace6
+assign [class="discord"] $workspace9
+assign [class="Spotify"] $workspace0
 
 bindsym Print exec maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i 
 bindsym $mod+Shift+x exec i3lock
