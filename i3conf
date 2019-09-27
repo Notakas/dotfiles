@@ -150,6 +150,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 new_window 1pixel
@@ -162,12 +163,26 @@ bar {
         status_command i3status
 }
 
-assign [class="Firefox"] $workspace2
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioStop exec playerctl stop
+
+assign [class="firefox"] $workspace2
 assign [class="Code"] $workspace3
+assign [class="Civ5XP"] $workspace4
 assign [class="Steam"] $workspace6
 assign [class="Lutris"] $workspace6
 assign [class="discord"] $workspace9
-assign [class="Spotify"] $workspace0
+assign [class="spotify"] $workspace10
 
 bindsym Print exec maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i 
 bindsym $mod+Shift+x exec i3lock
