@@ -182,7 +182,7 @@ assign [class="Civ5XP"] $workspace4
 assign [class="Steam"] $workspace6
 assign [class="Lutris"] $workspace6
 assign [class="discord"] $workspace9
-assign [class="spotify"] $workspace10
+for_window [class="Spotify"] move to workspace $workspace10
 
 bindsym Print exec maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i 
 bindsym $mod+Shift+x exec i3lock
